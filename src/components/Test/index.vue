@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Chào Mừng Bạn Đến Với DZFullStack</h1>
+        <h1>Chào Mừng Bạn Đến Với Hữu Hiếu</h1>
     </div>
 </template>
 <script>
