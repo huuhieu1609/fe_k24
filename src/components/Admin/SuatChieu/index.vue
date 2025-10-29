@@ -324,7 +324,7 @@ export default {
                             thoi_gian_ket_thuc: "",
                             tinh_trang: "",
                             ten_phim: "",
-                            ten_phong: ""
+                            ten_phong: "",
                         };
                              alert(res.data.message);
                     }
