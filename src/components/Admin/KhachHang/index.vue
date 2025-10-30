@@ -241,7 +241,7 @@ export default {
                             password: '',
                             so_dien_thoai: '',
                             ngay_sinh: '',
-                        },
+                        }, 
                              alert(res.data.message);
                     }
                 });

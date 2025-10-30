@@ -318,6 +318,7 @@ export default {
                     if (res.data.status) {
                         this.loadDataVe();
                         alert(res.data.message);
+                        // xóa
                     }
                 });
         },
