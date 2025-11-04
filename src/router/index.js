@@ -56,6 +56,33 @@ const routes = [
         component: () => import("../components/Admin/Voucher/index.vue"),
     },
 
+    {
+        path: "/trang-chu",
+        component: () => import("../components/Client/TrangChu/index.vue"),
+        meta: { layout: "client" },
+    },
+    {
+        path: "/admin/dang-nhap",
+        component: () => import("../components/Admin/DangNhap/index.vue"),
+        meta: { layout: "blank" },
+    },
+    {
+        path: "/client/dang-ky",
+        component: () => import("../components/Client/DangKy/index.vue"),
+        meta: { layout: "blank" },
+    },
+    {
+        path: "/client/phim-dang-chieu",
+        component: () => import("../components/Client/PhimDangChieu/index.vue"),
+        meta: { layout: "client" },
+    },
+    {
+        path: "/client/phim-sap-chieu",
+        component: () => import("../components/Client/PhimSapChieu/index.vue"),
+        meta: { layout: "client" },
+    },
+   
+
 
 
 ];

@@ -1,95 +1,76 @@
 <template>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark py-0" style="background-color: #000957;">
-            <div class="container"> <a class="navbar-brand fs-4 fw-bold" href="#"><span
-                        class="text-warning">DZ</span>Cinema</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
-                    aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    </ul>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <router-link to="/">
-                            <li class="nav-item"> <a class="nav-link  text-light fs-6" aria-current="page"
-                                    href="#">Trang
-                                    Chủ</a>
-                            </li>
-                        </router-link>
-                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-light fs-6" href="#"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Phim
-                            </a>
-                            <ul class="dropdown-menu">
-                                <router-link to="/phim/dang-chieu">
-                                    <li><a class="dropdown-item" href="/phim/dang-chieu">Phim Đang Chiếu</a>
-                                    </li>
-                                </router-link>
-                                <router-link to="/phim/sap-chieu">
-                                    <li><a class="dropdown-item" href="/phim/sap-chieu">Phim Sắp Chiếu</a>
-                                    </li>
-                                </router-link>
-                            </ul>
-                        </li>
-                        <router-link to="/bai-viet">
-                            <li class="nav-item"> <a class="nav-link text-light fs-6" href="/bai-viet">Bài Viết</a>
-                            </li>
-                        </router-link>
-                        <router-link to="/about">
-                            <li class="nav-item"> <a class="nav-link text-light fs-6" href="/about">Về chúng tôi</a>
-                            </li>
-                        </router-link>
-                    </ul>
-                    <div class="dropdown my-3">
-                        <template v-if="user">
-                            <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret"
-                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://cellphones.com.vn/sforum/wp-content/uploads/2024/02/anh-avatar-cute-58.jpg"
-                                    class="user-img" style="height: 35px; object-fit: cover;">
-                                <div class="user-info ps-3 pe-3">
-                                    <p class="user-name mb-0 text-light">Client</p>
-                                </div>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <router-link to="/client/profile">
-                                    <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i>
-                                            <span>Thông tin cá nhân</span></a>
-                                    </li>
-                                </router-link>
-                                <li><a class="dropdown-item" @click="dangXuat"><i class="bx bx-log-out-circle"></i>
-                                        <span>Đăng xuất</span></a>
-                                </li>
-                            </ul>
-                        </template>
-
-                        <template v-else>
-                            <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret"
-                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" class="user-img"
-                                    style="height: 35px; object-fit: cover;">
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <router-link to="/client/dang-ky">
-                                    <li><a class="dropdown-item"><span><i class="bx bx-user me-1"></i> Đăng
-                                                Ký</span></a></li>
-                                </router-link>
-                                <router-link to="/client/dang-nhap">
-                                    <li><a class="dropdown-item"><i class="bx bx-log-in-circle"></i> <span>Đăng
-                                                Nhập</span></a></li>
-                                </router-link>
-                            </ul>
-                        </template>
-                    </div>
-
-                </div>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-2">
+      <div class="container">
+        <router-link to="/" class="navbar-brand d-flex align-items-center gap-2 fs-3 fw-bold">
+          <span class="text-warning">🎬</span>
+          <span>DZCinema</span>
+        </router-link>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <router-link to="/" class="nav-link" exact-active-class="active"><i class="bi bi-house-door"></i> Trang Chủ</router-link>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="phimDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-film"></i> Phim
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="phimDropdown">
+                <li><router-link to="/phim/dang-chieu" class="dropdown-item"><i class="bi bi-play-circle me-2"></i>Phim Đang Chiếu</router-link></li>
+                <li><router-link to="/phim/sap-chieu" class="dropdown-item"><i class="bi bi-calendar3 me-2"></i>Phim Sắp Chiếu</router-link></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <router-link to="/bai-viet" class="nav-link"><i class="bi bi-journal-text"></i> Bài Viết</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/about" class="nav-link"><i class="bi bi-info-circle"></i> Về Chúng Tôi</router-link>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img v-if="user" :src="user.avatar" class="rounded-circle me-2 border border-2 border-warning" style="width:36px;height:36px;object-fit:cover;">
+                <img v-else src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" class="rounded-circle me-2 border border-2 border-secondary" style="width:36px;height:36px;object-fit:cover;">
+                <span class="d-none d-lg-inline text-white">{{ user ? user.name : 'Tài khoản' }}</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <template v-if="user">
+                  <li><router-link to="/client/profile" class="dropdown-item"><i class="bi bi-person-circle me-2"></i>Thông tin cá nhân</router-link></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a href="#" class="dropdown-item text-danger" @click.prevent="dangXuat"><i class="bi bi-box-arrow-right me-2"></i>Đăng xuất</a></li>
+                </template>
+                <template v-else>
+                  <li><router-link to="/client/dang-ky" class="dropdown-item"><i class="bi bi-person-plus me-2"></i>Đăng ký</router-link></li>
+                  <li><router-link to="/client/dang-nhap" class="dropdown-item"><i class="bi bi-box-arrow-in-right me-2"></i>Đăng nhập</router-link></li>
+                </template>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 </template>
+
 <script>
 export default {
-
+  data() {
+    return {
+      user: null // Tích hợp lấy user từ localStorage hoặc Vuex nếu đã đăng nhập
+    }
+  },
+  methods: {
+    dangXuat() {
+      // Logic đăng xuất: có thể clear localStorage, Vuex, rồi reload...
+      this.user = null;
+      // Ví dụ chuyển hướng
+      this.$router.push('/');
+    }
+  }
 }
 </script>
-<style></style>
