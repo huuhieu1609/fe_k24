@@ -371,8 +371,7 @@ list_phim: [
             ]
         }
     },
-    // Nếu sử dụng dữ liệu tĩnh trong data(), bạn không cần hàm loadData() hoặc mounted()
-    // Nếu sau này bạn muốn tích hợp API, bạn sẽ cần thêm lại mounted() và loadData()
+    
 }
 </script>
 
